@@ -4,3 +4,5 @@
 
 -npm i react-icons = para instalar icones do projeto
 -npm i react-router-dom = para resolver as rotas
+
+-npm i axios = cliente http

@@ -12,7 +12,7 @@ export default function Cases() {
                 <img src={logo} alt="Be the Hero" />
                 <span>Bem vinda, Nome da ONG</span>
 
-                <Link className="button" to="cases/new">Cadastrar novo casos</Link>
+                <Link className="button" to="/newcase">Cadastrar novo casos</Link>
                 <button type="button">
                     <FiPower size={18} color="#e02041" />
                 </button>
