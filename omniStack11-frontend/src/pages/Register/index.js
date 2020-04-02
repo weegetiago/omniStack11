@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import api from '../../servicos/api';
 
@@ -15,6 +15,8 @@ export default function Register() {
     const [city, setCity] = useState('');
     const [uf, setUf] = useState('');
 
+    const history = useHistory();
+
     async function listRegister(event) {
         event.preventDefault();
 
@@ -27,9 +29,11 @@ export default function Register() {
         };
 
         try {
-            const respone = await api.post('ongs', data);
+            const response = await api.post('ongs', data);
 
-            alert(`Seu ID de acesso é: ${respone.data.id}`);
+            alert(`Seu ID de acesso é: ${response.data.id}`);
+
+            history.push('/'); //Dps do registro, o usuário é direcionado para a tela de login.
         }
         catch (err) {
             alert('Erro no cadastro, tente novamente ou corra para as colinas');
